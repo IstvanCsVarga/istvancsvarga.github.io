@@ -1,8 +1,18 @@
-# React + Vite
+# istvanv.dev — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio of István Varga, DevOps and Platform Engineer. Built with React, Vite, and Three.js, and deployed to GitHub Pages through a GitHub Actions pipeline — the same way I ship everything else.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build to dist/
+npm run lint     # eslint
+```
+
+## Deployment
+
+Pushes to `master` are built and deployed to the `gh-pages` branch by the workflow in `.github/workflows/deploy.yml`.
+
+Live status of my services: [status.istvanv.dev](https://status.istvanv.dev) · [uptime.istvanv.dev](https://uptime.istvanv.dev)

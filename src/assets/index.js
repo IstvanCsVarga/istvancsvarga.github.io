@@ -18,13 +18,12 @@ import jenkins from "./tech/jenkins.png";
 import argo from "./tech/argo.png";
 import actions from "./tech/actions.png";
 import elastic from "./tech/elastic.png";
+import prometheus from "./tech/prometheus.png";
+import grafana from "./tech/grafana.png";
+import flux from "./tech/flux.png";
 
 import telekom from "./company/telekom.png";
 import accenture from "./company/accenture.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 
 export {
   logo,
@@ -45,10 +44,10 @@ export {
   jenkins,
   telekom,
   accenture,
-  carrent,
-  jobit,
-  tripguide,
   argo,
   actions,
   elastic,
+  prometheus,
+  grafana,
+  flux,
 };

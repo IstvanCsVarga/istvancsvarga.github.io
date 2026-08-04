@@ -39,10 +39,12 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a Sr Analyst and DevOps Engineer at Accenture, a leading global
-        professional services company. I have over three years of experience in
-        IT, specializing in Kubernetes, Docker, and cloud technologies with a
-        strong background in system administration.
+        I am a Senior Analyst and DevOps Engineer at Accenture, with about five
+        years of hands-on experience across DevOps and system administration. I
+        build the platforms teams ship on: golden-path CI/CD pipelines, GitOps
+        with Flux CD and Argo CD, and infrastructure as code with Terraform and
+        Ansible. I run monitoring on Azure and Kubernetes with real fault
+        detection, alerting, and recovery.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

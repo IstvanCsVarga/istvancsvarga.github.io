@@ -11,14 +11,14 @@ import {
   docker,
   telekom,
   accenture,
-  carrent,
-  jobit,
-  tripguide,
   jenkins,
   devops,
   argo,
   actions,
   elastic,
+  prometheus,
+  grafana,
+  flux,
 } from "../assets";
 
 export const navLinks = [
@@ -41,25 +41,25 @@ const services = [
     title: "DevOps Engineer",
     icon: devops,
     description:
-      "Experienced in orchestrating cloud deployments and ensuring robust, scalable DevOps systems.",
+      "I build CI/CD pipelines with Jenkins, GitHub Actions, and Argo CD, automating builds, tests, and deployments end to end.",
+  },
+  {
+    title: "Platform Engineer",
+    icon: engineer,
+    description:
+      "I create internal platforms and golden paths so teams provision and deploy through self-service instead of tickets.",
   },
   {
     title: "Cloud Engineer",
     icon: cloud,
     description:
-      "Skilled in creating and managing efficient, secure cloud architectures.",
+      "I design scalable, serverless infrastructure on Azure, defined as code with Terraform and Ansible and deployed through pipelines.",
   },
   {
     title: "Site Reliability Engineer",
     icon: sre,
     description:
-      "Dedicated to maintaining optimal system uptime and performance.",
-  },
-  {
-    title: "Software Engineer",
-    icon: engineer,
-    description:
-      "Developing user-centric, efficient software with cutting-edge technology.",
+      "I run monitoring with Prometheus, Grafana, and Elasticsearch — fault detection, alerting, and recovery that keep services up.",
   },
 ];
 
@@ -81,7 +81,7 @@ const technologies = [
     icon: kubernetes,
   },
   {
-    name: "Jenins",
+    name: "Jenkins",
     icon: jenkins,
   },
   {
@@ -93,12 +93,16 @@ const technologies = [
     icon: terraform,
   },
   {
-    name: "docker",
+    name: "Docker",
     icon: docker,
   },
   {
     name: "Argo CD",
     icon: argo,
+  },
+  {
+    name: "Flux CD",
+    icon: flux,
   },
   {
     name: "GitHub Actions",
@@ -107,6 +111,14 @@ const technologies = [
   {
     name: "Elasticsearch",
     icon: elastic,
+  },
+  {
+    name: "Prometheus",
+    icon: prometheus,
+  },
+  {
+    name: "Grafana",
+    icon: grafana,
   },
 ];
 
@@ -118,10 +130,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Jul 2020 - Mar 2021",
     points: [
-      "Administering and maintaining the IT-Shop along with various technology tools.",
-      "Handling the management of user accounts and workstations.",
-      "Monitoring system performance and ensuring maintenance as per requirements.",
-      "Troubleshooting system outages and addressing technical issues effectively.",
+      "Administered the internal IT-Shop and its day-to-day operations.",
+      "Provisioned and managed user accounts and workstations.",
+      "Monitored systems and services to catch issues before they became outages.",
+      "Troubleshot outages and drove them through to resolution.",
     ],
   },
   {
@@ -131,10 +143,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Apr 2022 - Dec 2022",
     points: [
-      "Deploying infrastructure and integrating aspects such as source control, security, compliance, CI/CD, monitoring, and feedback mechanisms.",
-      "Creating scalable and serverless infrastructure using cutting-edge technologies.",
-      "Engaging with various cloud technologies and covering all facets of the DevOps ecosystem from packaging to operations.",
-      "Establishing monitoring systems for service health, including fault detection, alerting, and recovery strategies.",
+      "Deployed and maintained Azure cloud infrastructure under the guidance of senior engineers.",
+      "Built and extended CI/CD pipeline stages with Jenkins and GitHub Actions.",
+      "Containerized services with Docker and supported their Kubernetes deployments.",
+      "Automated routine operations tasks with Python and Bash scripts.",
     ],
   },
   {
@@ -144,10 +156,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Dec 2022 - Nov 2023",
     points: [
-      "Deploying infrastructure and integrating aspects such as source control, security, compliance, CI/CD, monitoring, and feedback mechanisms.",
-      "Creating scalable and serverless infrastructure using cutting-edge technologies.",
-      "Engaging with various cloud technologies and covering all facets of the DevOps ecosystem from packaging to operations.",
-      "Establishing monitoring systems for service health, including fault detection, alerting, and recovery strategies.",
+      "Owned CI/CD pipelines end to end, integrating source control, security scanning, and compliance checks.",
+      "Defined infrastructure as code with Terraform and Ansible for repeatable environment deployments.",
+      "Provisioned scalable and serverless cloud infrastructure on Azure.",
+      "Set up monitoring and alerting with Prometheus, Grafana, and Elasticsearch.",
     ],
   },
   {
@@ -157,10 +169,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Dec 2023 - Present",
     points: [
-      "Deploying infrastructure and integrating aspects such as source control, security, compliance, CI/CD, monitoring, and feedback mechanisms.",
-      "Creating scalable and serverless infrastructure using cutting-edge technologies.",
-      "Engaging with various cloud technologies and covering all facets of the DevOps ecosystem from packaging to operations.",
-      "Establishing monitoring systems for service health, including fault detection, alerting, and recovery strategies.",
+      "Design and operate the platform infrastructure teams build on — scalable, serverless, and defined entirely as code.",
+      "Drive GitOps adoption with Argo CD and Flux CD, making Git the single source of truth for deployments.",
+      "Run monitoring systems with fault detection, alerting, and automated recovery.",
+      "Cover the full DevOps lifecycle, from packaging and deployment through to operations.",
     ],
   },
 ];
@@ -173,7 +185,7 @@ const testimonials = [
     designation: "Senior Manager",
     company: "Bank of Montreal",
     image:
-      "https://media.licdn.com/dms/image/C5603AQEm_q87bKrOMg/profile-displayphoto-shrink_800_800/0/1660433544025?e=1714003200&v=beta&t=VNrg4G8LmOf8rwRZzXxO3ChD7yVHBSylLH3ZzBshgPM",
+      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23915eff'/><text x='40' y='52' text-anchor='middle' font-family='Arial, sans-serif' font-size='30' font-weight='bold' fill='white'>GK</text></svg>",
   },
   {
     testimonial:
@@ -182,73 +194,76 @@ const testimonials = [
     designation: "Application Development Manager",
     company: "Accenture",
     image:
-      "https://media.licdn.com/dms/image/D5603AQEWLSIyLElIoA/profile-displayphoto-shrink_800_800/0/1705553327425?e=1714003200&v=beta&t=DdMZ5gd4dC9RaS6N9VD086TqvSZ_nqV-V46AZovFD6Y",
+      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><rect width='80' height='80' fill='%23151030'/><text x='40' y='52' text-anchor='middle' font-family='Arial, sans-serif' font-size='30' font-weight='bold' fill='%23915eff'>HR</text></svg>",
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Kubernetes GitOps with Flux CD",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A GitOps repository managing Kubernetes cluster configuration declaratively with Flux CD. Every change is a commit; the cluster reconciles itself from Git — no kubectl apply, no drift.",
     tags: [
       {
-        name: "react",
+        name: "kubernetes",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "fluxcd",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "gitops",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: "https://opengraph.githubassets.com/1/IstvanCsVarga/kcna-flux",
+    source_code_link: "https://github.com/IstvanCsVarga/kcna-flux",
   },
   {
-    name: "Job IT",
+    name: "Uptime Monitor & Status Page",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Monitoring as code: an Upptime-powered uptime monitor and public status page for istvanv.dev, run entirely by GitHub Actions and GitHub Pages. No servers — the live status page in this site's footer runs on it.",
     tags: [
       {
-        name: "react",
+        name: "upptime",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "github-actions",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "monitoring",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image:
+      "https://opengraph.githubassets.com/1/IstvanCsVarga/istvanv-dev-upttime",
+    source_code_link: "https://github.com/IstvanCsVarga/istvanv-dev-upttime",
   },
   {
-    name: "Trip Guide",
+    name: "Terraform CI/CD Pipeline",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Terraform infrastructure as code provisioned through automated GitHub Actions pipelines: plan on pull request, apply on merge. A complete, auditable review-and-release workflow for infrastructure changes.",
     tags: [
       {
-        name: "nextjs",
+        name: "terraform",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "iac",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "ci-cd",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image:
+      "https://opengraph.githubassets.com/1/IstvanCsVarga/learn-terraform-github-actions",
+    source_code_link:
+      "https://github.com/IstvanCsVarga/learn-terraform-github-actions",
   },
 ];
 
